@@ -1,0 +1,44 @@
+<div class="container">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" ng-click="avaliar()">AVALIAR</a>
+        <!--<a class="navbar-brand" href="login.html">LOGIN</a>-->
+    </nav>
+    <div class="row">
+
+        <div class="panel panel-heading">
+            <span>RANKING</span>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">OS MELHORES GAMES DA ATUALIDADE</div>
+            <div class="panel-body">Ranking dos games com as melhores avaliações</div>
+
+            <table class="table">
+                <tr>
+                    <th>ICON</th>
+                    <th>NOME DO JOGO</th>
+                    <th>USABILIDADE</th>
+                    <th>GRÁFICO</th>
+                    <th>ROTEIRO</th>
+                </tr>
+
+                <tr ng-repeat="game in games">
+                    <td>
+                        <span class="glyphicon glyphicon-knight"></span>
+                    </td>
+                    <td>{{game.nome}}</td>
+                    <td>
+                        <span ng-repeat="i in getNumber(game.pontuacaoUsabilidade)  track by $index" class="glyphicon glyphicon-star"></span>
+                    </td>
+                    <td>
+                        <span ng-repeat="i in getNumber(game.pontuacaoGrafico)  track by $index" class="glyphicon glyphicon-star"></span>
+                    </td>
+                    <td>
+                        <span ng-repeat="i in getNumber(game.pontuacaoRoteiro)  track by $index" class="glyphicon glyphicon-star"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>

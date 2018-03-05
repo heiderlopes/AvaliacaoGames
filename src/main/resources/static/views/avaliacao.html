@@ -1,0 +1,74 @@
+<div class="container">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="rank.html">RANKING</a>
+        <a class="navbar-brand" href="login.html">LOGIN</a>
+    </nav>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel panel-heading">
+                    <span>Avaliar o Game</span>
+                </div>
+                <div class="panel-body">
+
+                    <div class="col-lg-12">
+                        <form id="login-form" role="form" style="display: block;">
+                            <div class="form-group">
+                                <input type="text" name="busca" id="busca" tabindex="1" class="form-control"
+                                       placeholder="Digite os dados da busca." value="" ng-model="gamePesquisado">
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6 col-sm-offset-3">
+                                        <input type="submit" name="register-submit" id="register-submit" tabindex="4"
+                                               class="form-control btn btn-success" value="PESQUISAR"
+                                               ng-click="pesquisar(gamePesquisado)">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form>
+            <table class="table">
+                <tr>
+                    <th>ICON</th>
+                    <th>NOME DO JOGO</th>
+                    <th>USABILIDADE</th>
+                    <th>GRÁFICO</th>
+                    <th>ROTEIRO</th>
+                </tr>
+                <tr>
+                    <td id="iUrl">
+                        <span class="glyphicon glyphicon-knight"></span>
+                    </td>
+                    <td id="iNm">{{game.nome}}</td>
+                    <td id="iUsa"><span ng-repeat="i in getNumber(game.pontuacaoUsabilidade)  track by $index" class="glyphicon glyphicon-star"></span></td>
+                    <td id="iGraf"><span ng-repeat="i in getNumber(game.pontuacaoGrafico)  track by $index" class="glyphicon glyphicon-star"></span></td>
+                    <td id="iRot"><span ng-repeat="i in getNumber(game.pontuacaoRoteiro)  track by $index" class="glyphicon glyphicon-star"></span></td>
+                </tr>
+                <tr>
+                    <td><input type="hidden" name="tNmGame" id="iNmGame"/></td>
+                    <td><input type="hidden" name="tUrlIcon" id="iUrlIcon"/></td>
+                    <td>
+                        <input type="range" value="0" min="0" max="5" required="required" tabindex="1"
+                               name="tUsabilidade" id="iUsabilidade" ng-model="gameAvaliacao.pontuacaoUsabilidade"/>
+                    </td>
+                    <td>
+                        <input type="range" value="0" min="0" max="5" required="required" tabindex="2" name="tGrafico"
+                               id="iGrafico" ng-model="gameAvaliacao.pontuacaoGrafico"/>
+                    </td>
+                    <td>
+                        <input type="range" value="0" min="0" max="5" required="required" tabindex="3" name="tRoteiro"
+                               id="iRoteiro" ng-model="gameAvaliacao.pontuacaoRoteiro"/>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button class="btn btn-info btn-lg" type="submit" ng-click="avaliar()">AVALIAR</button>
+            </div>
+        </form>
+    </div>
+</div>
