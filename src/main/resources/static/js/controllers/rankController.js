@@ -6,9 +6,8 @@ app.controller('rankController', function ($scope, $rootScope, $http, $window, g
             .success(function (data) {
                 $scope.games = data
                 //$rootScope.maioresPontuadores = data;
-                console.log(data);
             }).error(function (err) {
-            alert(err.message);
+            alert(err);
         });
     };
 
@@ -16,7 +15,7 @@ app.controller('rankController', function ($scope, $rootScope, $http, $window, g
         $window.location.href = '/index.html#/avaliar';
     };
 
-    $scope.getNumber = function(num) {
+    $scope.getNumber = function (num) {
         return new Array(num);
     };
 

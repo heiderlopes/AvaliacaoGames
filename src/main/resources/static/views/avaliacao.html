@@ -1,7 +1,6 @@
 <div class="container">
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="rank.html">RANKING</a>
-        <a class="navbar-brand" href="login.html">LOGIN</a>
+        <a class="navbar-brand" ng-click="verRanking()">RANKING</a>
     </nav>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -31,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <form>
+        <form ng-show="game != null">
             <table class="table">
                 <tr>
                     <th>ICON</th>

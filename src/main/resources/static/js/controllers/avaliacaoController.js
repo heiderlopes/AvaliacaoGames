@@ -1,4 +1,4 @@
-app.controller('avaliacaoController', function($scope, $rootScope, $http, $timeout, $window, gameServices) {
+app.controller('avaliacaoController', function ($scope, $rootScope, $http, $timeout, $window, gameServices) {
 
     $scope.pesquisar = function (nomeJogo) {
         gameServices.getGame(nomeJogo)
@@ -7,11 +7,15 @@ app.controller('avaliacaoController', function($scope, $rootScope, $http, $timeo
                     $scope.game = data[0];
                 }
             }).error(function (err) {
-            alert(err.message);
+            alert(err);
         });
     };
 
-    $scope.avaliar = function() {
+    $scope.verRanking = function () {
+        $window.location.href = '/index.html#/rank';
+    };
+
+    $scope.avaliar = function () {
         $scope.gameAvaliacao.id = $scope.game.id;
         $scope.gameAvaliacao.nome = $scope.game.nome;
         $scope.gameAvaliacao.urlGame = $scope.game.urlGame;
@@ -22,12 +26,13 @@ app.controller('avaliacaoController', function($scope, $rootScope, $http, $timeo
             .success(function (data) {
                 $game = data;
                 alert("Avaliação realizada com sucesso!");
+                $window.location.href = '/index.html#/rank';
             }).error(function (err) {
-                alert(err.message);
+            alert(err);
         });
     };
 
-    $scope.getNumber = function(num) {
+    $scope.getNumber = function (num) {
         return new Array(num);
     };
 
