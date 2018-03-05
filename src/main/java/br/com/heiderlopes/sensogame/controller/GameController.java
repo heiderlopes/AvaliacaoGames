@@ -1,6 +1,7 @@
 package br.com.heiderlopes.sensogame.controller;
 
 import br.com.heiderlopes.sensogame.model.Game;
+import br.com.heiderlopes.sensogame.model.Health;
 import br.com.heiderlopes.sensogame.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.repository.Query;
@@ -44,5 +45,10 @@ public class GameController {
     @DeleteMapping(value = "{id}")
     public void apagarTodos(@PathVariable("id") String id) {
         gameService.apagar(id);
+    }
+
+    @GetMapping(value = "healthcheck")
+    public Health healthcheck() {
+        return new Health("OK");
     }
 }
