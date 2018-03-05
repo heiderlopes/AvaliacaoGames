@@ -40,4 +40,9 @@ public class GameController {
     public void apagarTodos() {
         gameService.apagarTodos();
     }
+
+    @DeleteMapping(value = "{id}")
+    public void apagarTodos(@PathVariable("id") String id) {
+        gameService.apagar(id);
+    }
 }

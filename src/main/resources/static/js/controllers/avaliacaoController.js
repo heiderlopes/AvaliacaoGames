@@ -16,13 +16,10 @@ app.controller('avaliacaoController', function ($scope, $rootScope, $http, $time
     };
 
     $scope.avaliar = function () {
-        $scope.gameAvaliacao.id = $scope.game.id;
-        $scope.gameAvaliacao.nome = $scope.game.nome;
-        $scope.gameAvaliacao.urlGame = $scope.game.urlGame;
 
-        console.log($scope.gameAvaliacao);
+        console.log($scope.game);
 
-        gameServices.avaliar($scope.gameAvaliacao)
+        gameServices.avaliar($scope.game)
             .success(function (data) {
                 $game = data;
                 alert("Avaliação realizada com sucesso!");

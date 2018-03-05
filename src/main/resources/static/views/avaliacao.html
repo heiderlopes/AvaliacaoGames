@@ -44,24 +44,42 @@
                         <span class="glyphicon glyphicon-knight"></span>
                     </td>
                     <td id="iNm">{{game.nome}}</td>
-                    <td id="iUsa"><span ng-repeat="i in getNumber(game.pontuacaoUsabilidade)  track by $index" class="glyphicon glyphicon-star"></span></td>
-                    <td id="iGraf"><span ng-repeat="i in getNumber(game.pontuacaoGrafico)  track by $index" class="glyphicon glyphicon-star"></span></td>
-                    <td id="iRot"><span ng-repeat="i in getNumber(game.pontuacaoRoteiro)  track by $index" class="glyphicon glyphicon-star"></span></td>
+
+                    <td id="iUsa">
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoUsabilidade > 0"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoUsabilidade > 1"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoUsabilidade > 2"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoUsabilidade > 3"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoUsabilidade > 4"></span>
+                    </td>
+                    <td id="iGraf">
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoGrafico > 0"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoGrafico > 1"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoGrafico > 2"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoGrafico > 3"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoGrafico > 4"></span>
+                    <td id="iRot">
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoRoteiro > 0"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoRoteiro > 1"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoRoteiro > 2"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoRoteiro > 3"></span>
+                        <span class="glyphicon glyphicon-star" ng-show="game.pontuacaoRoteiro > 4"></span>
+                    </td>
                 </tr>
                 <tr>
                     <td><input type="hidden" name="tNmGame" id="iNmGame"/></td>
                     <td><input type="hidden" name="tUrlIcon" id="iUrlIcon"/></td>
                     <td>
                         <input type="range" value="0" min="0" max="5" required="required" tabindex="1"
-                               name="tUsabilidade" id="iUsabilidade" ng-model="gameAvaliacao.pontuacaoUsabilidade"/>
+                               name="tUsabilidade" id="iUsabilidade" ng-model="game.pontuacaoUsabilidade"/>
                     </td>
                     <td>
                         <input type="range" value="0" min="0" max="5" required="required" tabindex="2" name="tGrafico"
-                               id="iGrafico" ng-model="gameAvaliacao.pontuacaoGrafico"/>
+                               id="iGrafico" ng-model="game.pontuacaoGrafico"/>
                     </td>
                     <td>
                         <input type="range" value="0" min="0" max="5" required="required" tabindex="3" name="tRoteiro"
-                               id="iRoteiro" ng-model="gameAvaliacao.pontuacaoRoteiro"/>
+                               id="iRoteiro" ng-model="game.pontuacaoRoteiro"/>
                     </td>
                 </tr>
             </table>

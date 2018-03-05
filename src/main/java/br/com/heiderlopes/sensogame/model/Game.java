@@ -9,11 +9,11 @@ public class Game {
     @Id
     private String id;
     private String nome;
-    private String urlGame;
     private Integer pontuacaoUsabilidade;
     private Integer pontuacaoGrafico;
     private Integer pontuacaoRoteiro;
     private Integer pontuacaoGeral;
+    private boolean avaliado;
 
     public String getId() {
         return id;
@@ -29,14 +29,6 @@ public class Game {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getUrlGame() {
-        return urlGame;
-    }
-
-    public void setUrlGame(String urlGame) {
-        this.urlGame = urlGame;
     }
 
     public Integer getPontuacaoUsabilidade() {
@@ -69,5 +61,13 @@ public class Game {
 
     public void setPontuacaoGeral(Integer pontuacaoGeral) {
         this.pontuacaoGeral = pontuacaoGeral;
+    }
+
+    public boolean isAvaliado() {
+        return avaliado;
+    }
+
+    public void setAvaliado(boolean avaliado) {
+        this.avaliado = avaliado;
     }
 }
